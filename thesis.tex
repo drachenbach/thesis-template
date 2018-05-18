@@ -1,0 +1,125 @@
+% do not change these two lines (this is a hard requirement
+% there is one exception: you might replace oneside by twoside in case you deliver 
+% the printed version in the accordant format
+\documentclass[a4,11pt,titlepage,oneside,openany]{book}
+\usepackage{times}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{ntheorem}
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage[section]{placeins}
+
+% URLs and hyperlinks
+\usepackage{url}
+\usepackage[hidelinks]{hyperref} % don't show colorful boxes
+
+% tables
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{subfig}
+
+% bibliography and citation
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=authoryear,hyperref=true,giveninits=true,doi=false]{biblatex}
+\addbibresource{thesis-ref.bib}
+% this is only for Kile to autocomplete citations
+\newcommand\NEVERRUN{
+  \bibliography{thesis-ref.bib}
+}
+
+% code
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+% example formatting
+\lstset{language=[11]C++, captionpos=b, numbers=left, stepnumber=1, tabsize=2, basicstyle=\footnotesize, breaklines=true, xleftmargin=2em, frame=single, framexleftmargin=1.8em}
+
+% graphs
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shadows.blur}
+
+% handy todo notes
+\usepackage{todonotes}
+
+% acronyms
+\usepackage[printonlyused,nohyperlinks]{acronym}
+
+\begin{document}
+
+% no page numbers for titlepage and abstract
+\pagenumbering{gobble}
+
+% titlepage
+\include{meta/titlepage}
+
+% empty page
+\newpage\null\thispagestyle{empty}\newpage
+
+% abstract
+\include{meta/abstract}
+
+% empty page
+\newpage\null\thispagestyle{empty}\newpage
+
+% start page numbering
+\pagenumbering{roman}
+
+% table of contents, algorithms, figures, tables, and listings
+\tableofcontents
+
+\listofalgorithms
+
+\listoffigures
+
+\listoftables
+
+\lstlistoflistings
+
+\include{meta/acronyms}
+
+\newpage
+
+% arabic numbering for content
+\pagenumbering{arabic}
+
+% include single files
+\include{chapters/introduction}
+
+% bibliography
+\printbibliography
+
+% appendix
+\appendix
+\include{appendix/code}
+
+\newpage
+
+\pagestyle{empty}
+
+\section*{Ehrenw\"ortliche Erkl\"arung}
+Ich versichere, dass ich die beiliegende Masterarbeit ohne Hilfe Dritter
+und ohne Benutzung anderer als der angegebenen Quellen und Hilfsmittel
+angefertigt und die den benutzten Quellen w\"ortlich oder inhaltlich
+entnommenen Stellen als solche kenntlich gemacht habe. Diese Arbeit
+hat in gleicher oder \"ahnlicher Form noch keiner Pr\"ufungsbeh\"orde
+vorgelegen. Ich bin mir bewusst, dass eine falsche Erkl\"arung rechtliche Folgen haben
+wird.
+\\
+\\
+
+\noindent
+Mannheim, den 07.05.2018 \hspace{4cm} Unterschrift
+
+\end{document}
+\grid
